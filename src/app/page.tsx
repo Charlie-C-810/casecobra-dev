@@ -1,6 +1,6 @@
 import MaxwidthWrapper from '@/components/MaxWidthWrapper'
 import Phone from '@/components/Phone'
-import { ArrowRight, Check, Star } from 'lucide-react'
+import { Check, Star } from 'lucide-react'
 
 export default function Home() {
   return (
