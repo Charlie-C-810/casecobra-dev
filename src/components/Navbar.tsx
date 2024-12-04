@@ -48,8 +48,9 @@ const Navbar = () => {
                   href={'/api/auth/register'}
                   className={buttonVariants({ variant: 'ghost', size: 'sm' })}
                 >
-                  Sign out
+                  Sign up
                 </Link>
+                <Link href="/api/auth/signin">Login</Link>
                 <div className="h-8 w-px bg-zinc-200 sm:block"></div>
                 <Link
                   href={'/api/auth/login'}
