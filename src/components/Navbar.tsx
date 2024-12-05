@@ -1,9 +1,14 @@
+'use client'
+
 import Link from 'next/link'
 import MaxwidthWrapper from './MaxWidthWrapper'
 import { buttonVariants } from './ui/button'
 import { ArrowRight } from 'lucide-react'
+import { useSession } from 'next-auth/react'
 
 const Navbar = () => {
+  const { status, data: session } = useSession()
+  console.log('session', session)
   const user = undefined
   const isAdmin = false
   return (
@@ -44,16 +49,17 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <Link
+                {/* <Link
                   href={'/api/auth/register'}
                   className={buttonVariants({ variant: 'ghost', size: 'sm' })}
                 >
                   Sign up
-                </Link>
-                <Link href="/api/auth/signin">Login</Link>
+                </Link> */}
+                <h1>Hello {session && session.user!.name}!</h1>
                 <div className="h-8 w-px bg-zinc-200 sm:block"></div>
                 <Link
-                  href={'/api/auth/login'}
+                  href={'/api/auth/signin'}
+                  // href={'/api/auth/login'}
                   className={buttonVariants({ variant: 'ghost', size: 'sm' })}
                 >
                   Login
